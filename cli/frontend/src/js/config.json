@@ -1,0 +1,17 @@
+{
+    "local": {
+        "EnvironmentConfig": {
+            "API": "http://localhost:8000/api/"
+        }
+    },
+    "staging": {
+        "EnvironmentConfig": {
+            "API": "https://evalai-staging.cloudcv.org/api/"
+        }
+    },
+    "production": {
+        "EnvironmentConfig": {
+            "API": "https://evalai.cloudcv.org/api/"
+        }
+    }
+}
