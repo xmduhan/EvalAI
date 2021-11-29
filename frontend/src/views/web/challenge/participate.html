@@ -91,7 +91,7 @@
                         <div class="row">
                             <div class="input-field align-left col s12 m12 l8">
                                 <input id="name" type="text" class="validate fs-16 dark-autofill w-300"
-                                    ng-model="challenge.team.name" ng-pattern="/^[\w -]*$/" focus-if>
+                                    ng-model="challenge.team.name" ng-pattern="/^[\w -.*\u4e00-\u9fa5]*$/" focus-if>
                                 <span class="form-icon form-icon-dark"><i class="fa fa-user"></i></span>
                                 <label for="name" data-error="wrong" data-success="right">Team Name*</label>
                                 <div class="wrn-msg text-highlight" ng-show="teams.team.error">
