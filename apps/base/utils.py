@@ -18,6 +18,7 @@ from rest_framework.exceptions import NotFound
 from rest_framework.pagination import PageNumberPagination
 
 from sendgrid.helpers.mail import Email, Mail, Personalization
+from unidecode import unidecode
 
 logger = logging.getLogger(__name__)
 
@@ -199,6 +200,7 @@ def get_or_create_sqs_queue_object(queue_name):
 
 
 def get_slug(param):
+    param = unidecode(param)
     slug = param.replace(" ", "-").lower()
     slug = re.sub(r"\W+", "-", slug)
     slug = slug[
@@ -223,6 +225,7 @@ def get_queue_name(param, challenge_pk):
     max_challenge_title_len = 50
 
     env = settings.ENVIRONMENT
+    param = unidecode(param)
     queue_name = param.replace(" ", "-").lower()[:max_challenge_title_len]
     queue_name = re.sub(r"\W+", "-", queue_name)
 

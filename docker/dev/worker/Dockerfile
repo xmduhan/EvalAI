@@ -1,5 +1,6 @@
 FROM evalai_django
 
+ENV PYTHONPATH=.
 ENV http_proxy=http://172.17.0.1:8118
 ENV https_proxy=http://172.17.0.1:8118
 

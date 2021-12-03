@@ -1303,8 +1303,8 @@ def create_challenge_using_zip_file(request, challenge_host_team_pk):
                     data["description"] = None
 
                 data["slug"] = "{}-{}-{}".format(
-                    challenge.title.split(" ")[0].lower(),
-                    data["codename"].replace(" ", "-").lower(),
+                    get_slug(challenge.title).split(" ")[0].lower(),
+                    get_slug(data["codename"]).replace(" ", "-").lower(),
                     challenge.pk,
                 )[:198]
                 test_annotation_file = data.get("test_annotation_file")
@@ -3155,7 +3155,7 @@ def create_or_update_github_challenge(request, challenge_host_team_pk):
                         files["challenge_test_annotation_files"],
                     ):
                         data["slug"] = "{}-{}-{}".format(
-                            challenge.title.split(" ")[0].lower(),
+                            get_slug(challenge.title).split(" ")[0].lower(),
                             get_slug(data["codename"]),
                             challenge.pk,
                         )[:198]
